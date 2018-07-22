@@ -1,0 +1,74 @@
+{{define "content"}}
+<div class="container">
+  <div class="row">
+    <div class="bootstrap-iso">
+      <div class="row">
+       <div class="col-md-6 col-sm-6 col-xs-12">
+        <form method="post">
+         <div class="form-group ">
+          <label class="control-label requiredField" for="unused">
+           Unused Contribution 2018
+           <span class="asteriskField">
+            *
+           </span>
+          </label>
+          <div class="input-group">
+           <div class="input-group-addon">
+            $
+           </div>
+           <input class="form-control" id="unused" name="unused" placeholder="5500" type="text" {{if .Unused}} value="{{ .Unused }}" {{end}}/>
+          </div>
+          <span class="help-block" id="hint_unused">
+           Enter your unused contribution amount as at January 1st 2018.
+          </span>
+         </div>
+         <div class="form-group ">
+          <label class="control-label requiredField" for="unused">
+           Contributions to date for 2018
+           <span class="asteriskField">
+            *
+           </span>
+          </label>
+          <div class="input-group">
+           <div class="input-group-addon">
+            $
+           </div>
+           <input class="form-control" id="current" name="current" placeholder="0" type="text" {{if .Current}} value="{{ .Current }}" {{end}}/>
+          </div>
+          <span class="help-block" id="hint_unused">
+           Enter the contributions you have made in 2018.
+          </span>
+         </div>         
+         <div class="form-group ">
+          <label class="control-label requiredField" for="monthly">
+           Monthly Contribution
+           <span class="asteriskField">
+            *
+           </span>
+          </label>
+          <div class="input-group">
+           <div class="input-group-addon">
+            $
+           </div>
+           <input class="form-control" id="monthly" name="monthly" placeholder="458" type="text" {{if .Monthly}} value="{{ .Monthly }}" {{end}}/>
+          </div>
+          <span class="help-block" id="hint_monthly">
+           Enter the amount you will contribute monthly.
+          </span>
+         </div>
+         {{.Message}}
+         <hr>
+         <div class="form-group">
+          <div>
+           <button class="btn btn-primary " name="submit" type="submit">
+            Submit
+           </button>
+          </div>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+</div>
+{{end}}
