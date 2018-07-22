@@ -5,15 +5,23 @@ import (
 	"github.com/spf13/viper"
 	"github.com/tylerb/graceful"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/cwise/tfsa/application"
 )
 
 func newConfig() (*viper.Viper, error) {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = ":8888"
+	} else {
+		port = ":" + port
+	}
+
 	c := viper.New()
 	c.SetDefault("cookie_secret", "xsOV25ZJi0fO33ls")
-	c.SetDefault("http_addr", ":8888")
+	c.SetDefault("http_addr", port)
 	c.SetDefault("http_cert_file", "")
 	c.SetDefault("http_key_file", "")
 	c.SetDefault("http_drain_interval", "1s")
