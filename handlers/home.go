@@ -53,7 +53,7 @@ func PostHome(w http.ResponseWriter, r *http.Request) {
 			date = date.AddDate(0, 1, 0)
 		}
 
-		message = fmt.Sprintf("You will catch up on contributions by %s %d", date.Month(), date.Year())
+		message = fmt.Sprintf("You will catch up on contributions by %s %d.", date.Month(), date.Year())
 	}
 
 	wd := WebData{
